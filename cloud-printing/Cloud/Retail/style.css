@@ -1,0 +1,150 @@
+/* Importation des polices Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500;700&display=swap');
+
+/* Style de base */
+body {
+    font-family: 'Poppins', sans-serif; /* Police élégante pour le texte général */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#product-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+/* Conteneur de la commande */
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Titre de la section */
+p {
+    font-size: 20px;
+    font-weight: 600; /* Police en gras pour le titre */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grille de produits */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Style des éléments de la grille */
+.grid-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.grid-item .price {
+    font-family: 'Roboto', sans-serif; /* Police moderne pour le prix */
+    font-size: 18px;
+    font-weight: 500;
+    color: #3914db;
+    margin-top: 10px;
+}
+
+input[type="checkbox"] {
+    margin-top: 10px;
+}
+
+/* Section des ingrédients */
+.ingredients {
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.ingredients label {
+    display: block;
+}
+
+.ingredients input {
+    margin-right: 5px;
+}
+
+/* Formulaire de commande */
+label {
+    font-size: 14px;
+    color: #333;
+    margin-top: 15px;
+    display: block;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    border-color: #66afe9;
+    outline: none;
+}
+
+button.submit-button {
+    background-color: #18b7e7;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button.submit-button:hover {
+    background-color: #5806db;
+}
+
+button.submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Styles de la mise en page mobile */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 90%;
+    }
+}

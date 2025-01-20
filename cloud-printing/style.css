@@ -1,0 +1,537 @@
+/* Réinitialisation des marges et des paddings par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Assurer que le body et le html occupent toute la hauteur */
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* En-tête */
+header {
+    background-color: #00539f;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Section principale */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00539f;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Formulaire */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #00539f;
+}
+
+.form-container input[type="text"],
+.form-container input[type="file"],
+.form-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+}
+
+.btn {
+    background-color: #00539f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #003f7f;
+    transform: scale(1.05);
+}
+
+/* Messages de succès ou d'erreur */
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}
+
+/* Pied de page */
+footer {
+    background-color: #00539f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: auto; /* Pousse le footer vers le bas */
+}
+
+/* Pop-up de message */
+.popup-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries pour rendre le site responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
+
+/* Conteneur principal pour les rectangles */
+.main-sps {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;  /* Espacement entre les rectangles */
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Chaque rectangle */
+.rectangle {
+    background-size: cover;
+    background-position: center;
+    width: 200px; /* 4 rectangles sur la même ligne */
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;  /* Centre le texte horizontalement */
+}
+
+/* Effet au survol */
+.rectangle:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Étiquette dans les rectangles */
+.rectangle .label {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation fade-in */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries pour rendre le layout responsive */
+@media (max-width: 768px) {
+    .rectangle {
+        width: 48%; /* 2 rectangles par ligne */
+    }
+}
+
+@media (max-width: 480px) {
+    .rectangle {
+        width: 100%; /* 1 rectangle par ligne */
+    }
+}
+
+ /* Style pour le conteneur principal */
+.order-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    max-width: 500px;
+    margin: 15px auto;
+    text-align: center;
+}
+
+/* Titre de la commande */
+.order-title {
+    font-size: 1.5rem;
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Grille des articles */
+.order-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* Style des articles individuels */
+.order-item {
+    background-color: #f9f9f9;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    padding: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.order-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Image de l'article */
+.order-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+/* Nom de l'article */
+.item-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 3px;
+}
+
+/* Prix de l'article */
+.item-price {
+    font-size: 0.9rem;
+    color: #555555;
+    margin-bottom: 8px;
+}
+
+/* Bouton de soumission */
+.order-submit-button {
+    background-color: #470d92;
+    color: white;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.order-submit-button:hover {
+    background-color: #2808da;
+}
+
+
+/* Fin du fichier style.css */
+
+/* --------------------Retail Cloud ------------------------------------------------------ */
+
+/* Conteneur principal */
+#product-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+/* Conteneur de la commande */
+.retail-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Titre de la section */
+.retail-title {
+    font-size: 20px;
+    font-weight: 600; /* Police en gras pour le titre */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grille de produits */
+.retail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Style des éléments de la grille */
+.retail-grid-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.retail-grid-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.retail-grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.retail-grid-item .retail-price {
+    font-family: 'Roboto', sans-serif; /* Police moderne pour le prix */
+    font-size: 18px;
+    font-weight: 500;
+    color: #3914db;
+    margin-top: 10px;
+}
+
+.retail-checkbox {
+    margin-top: 10px;
+}
+
+/* Section des ingrédients */
+.retail-ingredients {
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.retail-ingredients label {
+    display: block;
+}
+
+.retail-ingredients input {
+    margin-right: 5px;
+}
+
+/* Formulaire de commande */
+.retail-label {
+    font-size: 14px;
+    color: #333;
+    margin-top: 15px;
+    display: block;
+}
+
+.retail-input-text {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.retail-input-text:focus {
+    border-color: #66afe9;
+    outline: none;
+}
+
+.retail-submit-button {
+    background-color: #18b7e7;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.retail-submit-button:hover {
+    background-color: #5806db;
+}
+
+.retail-submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Styles de la mise en page mobile */
+@media (max-width: 768px) {
+    .retail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .retail-container {
+        width: 90%;
+    }
+}
